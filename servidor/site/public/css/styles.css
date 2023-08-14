@@ -11316,3 +11316,75 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.servicos-box-big{
+  width: 389px;
+  background-color: #0E9594;
+  height: 495px;
+  opacity: 89%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4%;
+}
+
+.servicos-box-big h2{
+  text-align: center;
+  padding: 5%;
+}
+
+.servicos-box-big p{
+  margin-left: 15%;
+  align-items: center;
+  font-size: 22px;
+  margin-top: 5%;
+}
+
+.servicos-box-small{
+  width: 392px;
+  background-color: #001F45;
+  height: 230px;
+  opacity: 89%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.servicos-box{
+  display: flex;
+  flex-direction: row;
+}
+
+.servicos-box-S{
+  display: flex;
+  flex-direction: row;
+}
+
+.servicos-box-small-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  margin-left: 7%;
+}
+
+.box-servico-img{
+  width:  80px;
+  height: 80px;
+  background-color: #1C314A;
+}
+
+.box-servico-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly ;
+  margin-top: 7%;
+}
+
+.box-servico-img{
+  text-align: center;
+  align-items: center;
+    display: flex;
+    justify-content: center
+}

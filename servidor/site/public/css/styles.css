@@ -11316,3 +11316,136 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.servicos-box-big{
+  width: 389px;
+  background-color: #0E9594;
+  height: 495px;
+  opacity: 89%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4%;
+}
+
+.servicos-box-big h2{
+  text-align: center;
+  padding: 5%;
+}
+
+.servicos-box-big p{
+  margin-left: 15%;
+  align-items: center;
+  font-size: 22px;
+  margin-top: 5%;
+}
+
+.servicos-box-small{
+  width: 392px;
+  background-color: #001F45;
+  height: 230px;
+  opacity: 89%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.servicos-box{
+  display: flex;
+  flex-direction: row;
+}
+
+.servicos-box-S{
+  display: flex;
+  flex-direction: row;
+}
+
+.servicos-box-small-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  margin-left: 7%;
+}
+
+.box-servico-img{
+  width:  80px;
+  height: 80px;
+  background-color: #1C314A;
+}
+
+.box-servico-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly ;
+  margin-top: 7%;
+}
+
+.box-servico-img{
+  text-align: center;
+  align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.servicos-box-2{
+  display: flex;
+  flex-direction: row;
+  background-color: #020D36;
+  margin-top: 2%;
+}
+
+.servicos-box-2-img{
+  padding: 60px;
+}
+
+.servicos-box-2 h2{
+  color: #0FC3A7;
+  font-size: 17px;
+}
+
+.servico-linha{
+  width: 40px;
+  background-color: #0FC3A7;
+  height: 4px;
+}
+
+.servico-titulo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.box-servico-titulo{
+  margin-top: 5%;
+  width: 50%;
+}
+
+.box-servico-chart{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+
+.box-servico-chart-escritos{
+display: flex;
+flex-direction: column;
+margin-left: 10%;
+font-size: 27px;
+}
+
+.box-servico-chart-escritos h2{
+  font-size: 30px;
+}
+
+.servico-button{
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #0E9594;
+  color: white;
+  font-weight: bold;
+  margin-top: 10%;
+  margin-left: 70%;
+  font-size: 23px;
+}

@@ -11398,7 +11398,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-2-img{
-  padding: 60px;
+  /* padding: 60px; */
 }
 
 .servicos-box-2 h2{
@@ -11419,8 +11419,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .box-servico-titulo{
-  margin-top: 5%;
-  width: 50%;
+  /* margin-top: 5%; */
+  /* width: 50%; */
 }
 
 .box-servico-chart{
@@ -11442,11 +11442,11 @@ font-size: 27px;
 
 .servico-button{
   border-radius: 20px;
-  padding: 12px;
+  /* padding: 12px; */
   background-color: #0E9594;
   color: white;
   font-weight: bold;
-  margin-top: 10%;
-  margin-left: 70%;
+  /* margin-top: 10%; */
+  /* margin-left: 70%; */
   font-size: 23px;
 }

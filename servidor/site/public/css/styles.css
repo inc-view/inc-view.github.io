@@ -11318,14 +11318,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-big{
-  width: 389px;
+  /* width: 389px; */
   background-color: #0E9594;
-  height: 495px;
+  /* height: 495px; */
   opacity: 89%;
-  margin-left: 5%;
+  /* margin-left: 5%; */
   display: flex;
   flex-direction: column;
-  margin-top: 4%;
+  /* margin-top: 4%; */
 }
 
 .servicos-box-big h2{
@@ -11337,18 +11337,18 @@ section#contact form#contactForm :-ms-input-placeholder {
   margin-left: 15%;
   align-items: center;
   font-size: 22px;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 .servicos-box-small{
-  width: 392px;
+  min-width: 20rem;
   background-color: #001F45;
-  height: 230px;
+  /* height: 230px; */
   opacity: 89%;
-  margin-left: 5%;
+  /* margin-left: 5%; */
   display: flex;
   flex-direction: column;
-  margin-bottom: 10%;
+  /* margin-bottom: 10%; */
 }
 
 .servicos-box{
@@ -11362,10 +11362,11 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-small-container{
-  display: flex;
-  flex-direction: column;
-  margin-top: 7%;
-  margin-left: 7%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* margin-top: 7%;
+  margin-left: 7%; */
+  /* padding: 7%; */
 }
 
 .box-servico-img{
@@ -11397,7 +11398,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-2-img{
-  padding: 60px;
+  /* padding: 60px; */
 }
 
 .servicos-box-2 h2{
@@ -11418,8 +11419,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .box-servico-titulo{
-  margin-top: 5%;
-  width: 50%;
+  /* margin-top: 5%; */
+  /* width: 50%; */
 }
 
 .box-servico-chart{
@@ -11441,11 +11442,141 @@ font-size: 27px;
 
 .servico-button{
   border-radius: 20px;
-  padding: 12px;
+  /* padding: 12px; */
   background-color: #0E9594;
   color: white;
   font-weight: bold;
-  margin-top: 10%;
-  margin-left: 70%;
+  /* margin-top: 10%; */
+  /* margin-left: 70%; */
   font-size: 23px;
+}
+
+.oque-Fazemos-titulo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.box-oque-fazemos-small{
+  background: #001F45;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 474px;
+  height: 538px;
+  flex-shrink: 0;
+  margin-left: 3%;
+}
+
+.box-oque-fazemos{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.box-oque-fazemos H1{
+  font-size: 26px;
+}
+
+.text-oque-fazemos{
+  padding: 5%;
+}
+
+.box-oque-fazemos p{
+  font-size: 14px;
+}
+
+.box-oque-fazemos H2{
+  font-size: 21px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.title{
+    color: rgba(15, 195, 167, 0.89);
+font-size: 17px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding: 1%;  
+}
+
+.sessao-5{
+  background-color: #020D36;
+}
+
+.box-escolher{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.box-escolher p{
+  color: #FFF;
+  width: 677px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.box-escolher h5{
+  margin-top: 5%;
+}
+
+.title-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.barra{
+  background: #0FC3A7;
+  width: 515px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.box-why{
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+
+.container-time{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-time{
+  background: #020D36;
+  width: 368px;
+  height: 90px;
+  margin-left: 2%;
+}
+
+
+.time{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+
+.img-ex{
+  background: #1C314A;
+  height: 350px;
+}
+
+.sessao-6{
+  height: 750px;
+}
+
+.box-time h4{
+  padding: 3%;
+}
+
+.box-time p{
+  padding: 3%;
 }

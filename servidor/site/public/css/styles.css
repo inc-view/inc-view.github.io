@@ -9142,7 +9142,7 @@ textarea.form-control-lg {
     padding: 1.5rem !important;
   }
   .p-md-5 {
-    padding: 3rem !important;
+    padding: -14rem !important;
   }
   .px-md-0 {
     padding-right: 0 !important;
@@ -10856,7 +10856,7 @@ p {
 
 @media (min-width: 768px) {
   section {
-    padding: 9rem 0;
+    padding: 6rem 0;
   }
 }
 .btn-xl {
@@ -11318,14 +11318,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-big{
-  /* width: 389px; */
+  width: 389px;
   background-color: #0E9594;
-  /* height: 495px; */
+  height: 495px;
   opacity: 89%;
-  /* margin-left: 5%; */
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
-  /* margin-top: 4%; */
+  margin-top: 4%;
 }
 
 .servicos-box-big h2{
@@ -11337,18 +11337,18 @@ section#contact form#contactForm :-ms-input-placeholder {
   margin-left: 15%;
   align-items: center;
   font-size: 22px;
-  /* margin-top: 5%; */
+  margin-top: 5%;
 }
 
 .servicos-box-small{
-  min-width: 20rem;
+  width: 392px;
   background-color: #001F45;
-  /* height: 230px; */
+  height: 230px;
   opacity: 89%;
-  /* margin-left: 5%; */
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
-  /* margin-bottom: 10%; */
+  margin-bottom: 10%;
 }
 
 .servicos-box{
@@ -11362,11 +11362,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-small-container{
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* margin-top: 7%;
-  margin-left: 7%; */
-  /* padding: 7%; */
+  display: flex;
+  flex-direction: column;
 }
 
 .box-servico-img{
@@ -11395,10 +11392,11 @@ section#contact form#contactForm :-ms-input-placeholder {
   flex-direction: row;
   background-color: #020D36;
   margin-top: 2%;
+  padding: 3%;
 }
 
 .servicos-box-2-img{
-  /* padding: 60px; */
+  padding: 60px;
 }
 
 .servicos-box-2 h2{
@@ -11412,6 +11410,11 @@ section#contact form#contactForm :-ms-input-placeholder {
   height: 4px;
 }
 
+.servicos-box .container{
+  display: flex;
+  flex-direction: row;
+}
+
 .servico-titulo{
   display: flex;
   flex-direction: row;
@@ -11419,8 +11422,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .box-servico-titulo{
-  /* margin-top: 5%; */
-  /* width: 50%; */
+  margin-top: 5%;
+  width: 50%;
 }
 
 .box-servico-chart{
@@ -11442,12 +11445,12 @@ font-size: 27px;
 
 .servico-button{
   border-radius: 20px;
-  /* padding: 12px; */
+  padding: 12px;
   background-color: #0E9594;
   color: white;
   font-weight: bold;
-  /* margin-top: 10%; */
-  /* margin-left: 70%; */
+  margin-top: 10%;
+  margin-left: 70%;
   font-size: 23px;
 }
 
@@ -11579,4 +11582,116 @@ padding: 1%;
 
 .box-time p{
   padding: 3%;
+}
+
+.sessao-6 .title-row .title{
+  width: 110px;
+  padding: 5%;
+}
+
+.sessao-7{
+  background: #020D36;
+}
+
+.box-contact{
+  display: flex;
+  flex-direction: column;
+  background: #01152E;
+  padding: 2%;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.container-contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 470px;
+}
+
+.container-contact input{
+  width: 100%;
+  border: 1px solid #006F5E;
+  background: #01152E;
+  padding: 3%;
+  margin-top: 10%;
+}
+
+.container-contact button{
+  background: #0FC3A7;
+  width: 103px;
+  height: 47px;
+  flex-shrink: 0;
+  margin-top: 10%;
+  color: white;
+}
+
+.footer{
+  background: rgba(14, 149, 148, 0.89);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 123px;
+  align-items: center;
+}
+
+.footer button{
+  border-radius: 41px;
+  background: #020D36;
+  width: 184px;
+  height: 50px;
+  flex-shrink: 0;
+  color: white;
+}
+
+.footer-logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.box-contact-2{
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+
+.reta{
+  width: 4px;
+  height: 70px;
+  background-color: #0FC3A7;
+}
+
+.contact-img{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.container-contact .title-row{
+  margin-left: 2%;
+}
+
+.container-contact-2{
+  margin-left: 3%;
+  width: 600px;
+}
+
+.container-contact-2 h1{
+  font-size: 25px;
+}
+
+.container-contact-2 h2{
+  font-size: 23px;
+  margin-top: 6%;
+}
+
+.r{
+  --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
 }

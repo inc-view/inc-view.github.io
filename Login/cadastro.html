@@ -74,14 +74,22 @@ function verify() {
         var telefone = iptTelefone.value
         var senha = iptSenha.value
         var confirmarSenha = iptConfirmarSenha.value
-        const rexec = /[0-9]+/g;
-        const found = senha.match(rexec);
-        var erro = false
 
+        var erro = false
+        
         if (nome == "" || email == "" || senha == "" || confirmarSenha == "" || cpf == "" || telefone == "") {
-            alert("Por favor informe todos os dados.")
+          alert("Por favor informe todos os dados.")
+          erro = true;
+        }
+        
+        if ( senha.length < 8 || !/\d/.test(senha) ) {
+            alert("Informe uma senha válida. (Min. 8 caracteres e um número)")
             erro = true;
         }
+
+        if (confirmarSenha != senha) {
+            alert("As senhas não são iguais, por favor as informe corretamente.")
+            erro = true;
 
         if (nome.length <= 2) {
             alert("Informe um nome válido")
@@ -93,23 +101,15 @@ function verify() {
             erro = true;
         }
 
-        if (cpf.length =! 11) {
+        if (cpf.length < 11 || cfp.length > 11) {
           alert("Informe um CPF válido. Ex:12345678901")
         }
 
-        if (telefone.length!= 9) {
+        if (telefone.length != 9) {
             alert("Informe um telefone válido. Ex:912123434")
             erro = true;
         }
 
-        if ( senha.length < 8 || found.length == false) {
-            alert("Informe uma senha válida. (Min. 8 caracteres e um número)")
-            erro = true;
-        }
-
-        if (confirmarSenha != senha) {
-            alert("As senhas não são iguais, por favor as informe corretamente.")
-            erro = true;
         }
 
         if (erro == false) {

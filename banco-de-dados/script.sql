@@ -27,20 +27,20 @@ IdSetor INT PRIMARY KEY AUTO_INCREMENT,
 nomeSetor VARCHAR(45) NOT NULL,
 fkFilial INT, FOREIGN KEY(fkFilial) REFERENCES filial(IdFilial))AUTO_INCREMENT = 200;
 
-CREATE TABLE funcionario(
-IdFuncionario INT PRIMARY KEY AUTO_INCREMENT,
-nomeFuncionario VARCHAR(45) NOT NULL,
+CREATE TABLE gestor(
+IdGestor INT PRIMARY KEY AUTO_INCREMENT,
+nomeGestor VARCHAR(45) NOT NULL,
 telefone VARCHAR(12),
 CPF VARCHAR(15) NOT NULL,
 email VARCHAR(45) NOT NULL,
 fkSetor INT, FOREIGN KEY(fkSetor) REFERENCES setor(IdSetor))AUTO_INCREMENT = 1000;
 
-CREATE TABLE usuario(
-IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
-nomeUsuario VARCHAR(45) NOT NULL,
-emailUsuario VARCHAR(45) NOT NULL,
-senhaUsuario VARCHAR(45) NOT NULL,
-fkFuncionario INT, FOREIGN KEY(fkFuncionario) REFERENCES funcionario(IdFuncionario))AUTO_INCREMENT = 1100;
+CREATE TABLE funcionario(
+IdFuncionario INT PRIMARY KEY AUTO_INCREMENT,
+nomeFuncionario VARCHAR(45) NOT NULL,
+emailFuncionario VARCHAR(45) NOT NULL,
+senhaFuncionario VARCHAR(45) NOT NULL,
+fkGestor INT, FOREIGN KEY(fkGestor) REFERENCES gestor(IdGestor))AUTO_INCREMENT = 1100;
 
 CREATE TABLE computadores(
 IdComputador INT PRIMARY KEY AUTO_INCREMENT,
@@ -52,16 +52,23 @@ IdSoftwares INT PRIMARY KEY AUTO_INCREMENT,
 nomeSoftware VARCHAR(45) NOT NULL,
 cartegoriaSoftware VARCHAR(45))AUTO_INCREMENT = 2300;
 
+CREATE TABLE chamados(
+IdChamado INT PRIMARY KEY AUTO_INCREMENT,
+cartegoriaChamado VARCHAR(45),
+descricaoChamado VARCHAR(300))AUTO_INCREMENT = 3300;
+
 CREATE TABLE computadoresSoftwares(
 FKidComputador INT, FOREIGN KEY(FKidComputador) REFERENCES computadores(IdComputador),
 FKidSoftware INT, FOREIGN KEY(FKidSoftware) REFERENCES softwares(IdSoftwares),
 PRIMARY KEY(FKidComputador, FKidSoftware),
-softwareLiberado VARCHAR(45));
+softwaresLiberados VARCHAR(45),
+FKidChamado INT, FOREIGN KEY(FKidChamado) REFERENCES chamados(IdChamado));
 
 CREATE TABLE peca(
 IdPeca INT PRIMARY KEY AUTO_INCREMENT,
 valor DOUBLE NOT NULL,
-modelo VARCHAR(45) NOT NULL)AUTO_INCREMENT = 5000;
+modelo VARCHAR(45) NOT NULL,
+fkChamado INT, FOREIGN KEY(fkChamado) REFERENCES chamados(IdChamado))AUTO_INCREMENT = 5000;
 
 CREATE TABLE componentes(
 IdComponente INT PRIMARY KEY AUTO_INCREMENT,

@@ -20,30 +20,30 @@
     <h2>Cadastrar</h2>
     <form>
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="" required="" id="iptNome">
         <label>Nome:</label>
       </div>
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="" required="" id="iptEmail">
         <label>Email:</label>
       </div>
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="" required="" id="iptCPF">
         <label>CPF:</label>
       </div>
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="" required="" id="iptTelefone">
         <label>Telefone:</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="" required="" id="iptSenha">
         <label>Senha:</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="" required="" id="iptConfirmarSenha">
         <label>Confirmar Senha:</label>
       </div>
-      <a href="#">
+      <a href="#" onclick="verify()">
         <span></span>
         <span></span>
         <span></span>
@@ -63,3 +63,59 @@
 </body>
 
 </html>
+
+
+<script>
+
+function verify() {
+        var nome = iptNome.value
+        var email = iptEmail.value
+        var cpf = iptCPF.value
+        var telefone = iptTelefone.value
+        var senha = iptSenha.value
+        var confirmarSenha = iptConfirmarSenha.value
+        const rexec = /[0-9]+/g;
+        const found = senha.match(rexec);
+        var erro = false
+
+        if (nome == "" || email == "" || senha == "" || confirmarSenha == "" || cpf == "" || telefone == "") {
+            alert("Por favor informe todos os dados.")
+            erro = true;
+        }
+
+        if (nome.length <= 2) {
+            alert("Informe um nome válido")
+            erro = true;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+            alert("Informe um email válido.")
+            erro = true;
+        }
+
+        if (cpf.length =! 11) {
+          alert("Informe um CPF válido. Ex:12345678901")
+        }
+
+        if (telefone.length!= 9) {
+            alert("Informe um telefone válido. Ex:912123434")
+            erro = true;
+        }
+
+        if ( senha.length < 8 || found.length == false) {
+            alert("Informe uma senha válida. (Min. 8 caracteres e um número)")
+            erro = true;
+        }
+
+        if (confirmarSenha != senha) {
+            alert("As senhas não são iguais, por favor as informe corretamente.")
+            erro = true;
+        }
+
+        if (erro == false) {
+            cadastrar()
+        }
+    }
+
+
+</script>

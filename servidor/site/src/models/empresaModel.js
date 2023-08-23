@@ -6,11 +6,7 @@ function buscarPorId(id) {
   return database.executar(query);
 }
 
-function listar() {
-  var query = `select * from empresa`;
 
-  return database.executar(query);
-}
 
 function buscarPorCnpj(cnpj) {
   var query = `select * from empresa where cnpj = '${cnpj}'`;

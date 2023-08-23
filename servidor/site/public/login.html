@@ -33,11 +33,11 @@
     <h2>Login</h2>
     <form>
       <div class="user-box">
-        <input id="email_input" type="text" placeholder="Login">
-        <label>Email:</label>
+        <input id="iptEmail" type="text" name="" required=""/>        
+      <label>Email:</label>
       </div>
       <div class="user-box">
-        <input id="senha_input" type="text" placeholder="******">
+        <input id="iptSenha" type="password" name="" required=""/>
         <label>Senha:</label>
       </div>
       <a href="#" class="botao" onclick="entrar()">
@@ -102,7 +102,6 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";

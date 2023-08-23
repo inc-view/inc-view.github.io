@@ -18,7 +18,7 @@
   />
 </head>
 
-<body onload="listar()">
+<!-- <body onload="listar()"> -->
 
   <div class="header">
     <h1>Menu</h1>
@@ -29,11 +29,11 @@
     <h2>Cadastrar</h2>
     <form>
       <div class="user-box">
-        <input id="nome_input" type="text" placeholder="Seu nome" />
+        <input id="iptNome" type="text" name="" required=""/>
         <label>Nome:</label>
       </div>
       <div class="user-box">
-        <input id="email_input" type="text" placeholder="meuemail@provedor.com"/>        
+        <input id="iptEmail" type="text" name="" required=""/>        
       <label>Email:</label>
       </div>
       <div class="user-box">
@@ -45,7 +45,7 @@
         <label>Telefone:</label>
       </div>
       <div class="user-box">
-        <input id="senha_input" type="password" placeholder="******" />
+        <input id="iptSenha" type="password" name="" required=""/>
         <label>Senha:</label>
       </div>
       <div class="user-box">
@@ -126,171 +126,93 @@ function verify() {
         }
     }
 
+    function cadastrar() {
 
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-
-            <div class="campo">
-              <span>Nome:</span>
-              <input id="nome_input" type="text" placeholder="Seu nome" />
-            </div>
-            <div class="campo">
-              <span>E-mail:</span>
-              <input
-                id="email_input"
-                type="text"
-                placeholder="meuemail@provedor.com"
-              />
-            </div>
-            <div class="campo">
-              <span>Senha:</span>
-              <input id="senha_input" type="password" placeholder="******" />
-            </div>
+//Recupere o valor da nova input pelo nome do id
+// Agora vá para o método fetch logo abaixo
+var nomeVar = iptNome.value;
+var emailVar = iptEmail.value;
+var senhaVar = iptSenha.value;
+var confirmacaoSenhaVar = iptConfirmarSenha.value;
+var cpfVar = iptCPF.value;
+var telefoneVar = iptTelefone.value;
+if (
+  nomeVar == "" ||
+  emailVar == "" ||
+  senhaVar == "" ||
+  confirmacaoSenhaVar == "" ||
+  cpfVar == "" ||
+  telefoneVar == ""
+) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML =
+    "(Mensagem de erro para todos os campos em branco)";
 
 
-            <div class="campo">
-              <span>Empresa:</span>
-              <select name="empresas" id="listaEmpresas">
-                <option selected>Selecione uma empresa</option>
-              </select>
-            </div>
-            <div class="campo">
-              <span>Confirmação da Senha:</span>
-              <input
-                id="confirmacao_senha_input"
-                type="password"
-                placeholder="******"
-              />
-            </div>
-            <button class="botao" onclick="cadastrar()">Cadastrar</button>
-          </div>
-          <div id="div_aguardar" class="loading-div">
-            <img src="./assets/circle-loading.gif" id="loading-gif" />
-          </div>
+  return false;
+} else {
+ 
+}
 
-          <div id="div_erros_login"></div>
-        </div>
-      </div>
-    </div>
+// Enviando o valor da nova input
+fetch("/usuarios/cadastrar", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    // crie um atributo que recebe o valor recuperado aqui
+    // Agora vá para o arquivo routes/usuario.js
+    nomeServer: nomeVar,
+    emailServer: emailVar,
+    senhaServer: senhaVar,
+    cpfServer: cpfVar,
+    telefoneServer: telefoneVar,
+  }),
+})
+  .then(function (resposta) {
+    console.log("resposta: ", resposta);
 
-    <!--footer inicio-->
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
-    </div>
-    <!--footer fim-->
-  </body>
-</html>
-
-<script>
-  function cadastrar() {
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      empresaVar == ""
-    ) {
+    if (resposta.ok) {
       cardErro.style.display = "block";
+
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-      finalizarAguardar();
-      return false;
+      setTimeout(() => {
+        window.location = "login.html";
+      }, "2000");
+
+
     } else {
-      setInterval(sumirMensagem, 5000);
+      throw "Houve um erro ao tentar realizar o cadastro!";
     }
+  })
+  .catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+;
+  });
 
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        empresaServer: empresaVar
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+return false;
+}
 
-        if (resposta.ok) {
-          cardErro.style.display = "block";
+// function listar() {
+// fetch("/empresas/listar", {
+//   method: "GET",
+// })
+//   .then(function (resposta) {
+//     resposta.json().then((empresas) => {
+//       empresas.forEach((empresa) => {
+//         listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+//       });
+//     });
+//   })
+//   .catch(function (resposta) {
+//     console.log(`#ERRO: ${resposta}`);
+//   });
+// }
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
 
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
 
-    return false;
-  }
-
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
-
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
 </script>

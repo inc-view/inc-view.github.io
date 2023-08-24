@@ -1,6 +1,6 @@
 CREATE DATABASE VISS;
-
 USE VISS;
+
 CREATE TABLE empresa(
 IdEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 razao VARCHAR(45) NOT NULL,
@@ -48,10 +48,10 @@ IdComputador INT PRIMARY KEY AUTO_INCREMENT,
 patrimonio VARCHAR(45),
 fkFuncionario INT, FOREIGN KEY(fkFuncionario) REFERENCES funcionario(IdFuncionario))AUTO_INCREMENT = 3000;
 
+
 CREATE TABLE softwares(
 IdSoftwares INT PRIMARY KEY AUTO_INCREMENT,
 nomeSoftware VARCHAR(45) NOT NULL,
-usuario VARCHAR(45) NOT NULL,
 cartegoriaSoftware VARCHAR(45))AUTO_INCREMENT = 2300;
 
 
@@ -70,7 +70,8 @@ tipo VARCHAR(50) NOT NULL,
 fkComputadores INT, FOREIGN KEY(fkComputadores) REFERENCES computadores(IdComputador)
 )AUTO_INCREMENT = 4000;
 
-CREATE TABLE regisitros(
+
+CREATE TABLE registros(
 IdRegistro INT PRIMARY KEY AUTO_INCREMENT,
 emUso VARCHAR(10),
 temperatura VARCHAR(5),

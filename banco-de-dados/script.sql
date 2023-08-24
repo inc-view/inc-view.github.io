@@ -1,7 +1,6 @@
 CREATE DATABASE VISS;
 
 USE VISS;
-
 CREATE TABLE empresa(
 IdEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 razao VARCHAR(45) NOT NULL,
@@ -27,20 +26,22 @@ IdSetor INT PRIMARY KEY AUTO_INCREMENT,
 nomeSetor VARCHAR(45) NOT NULL,
 fkFilial INT, FOREIGN KEY(fkFilial) REFERENCES filial(IdFilial))AUTO_INCREMENT = 200;
 
-CREATE TABLE gestor(
-IdGestor INT PRIMARY KEY AUTO_INCREMENT,
-nomeGestor VARCHAR(45) NOT NULL,
-telefone VARCHAR(12),
-CPF VARCHAR(15) NOT NULL,
-email VARCHAR(45) NOT NULL,
-fkSetor INT, FOREIGN KEY(fkSetor) REFERENCES setor(IdSetor))AUTO_INCREMENT = 1000;
-
 CREATE TABLE funcionario(
 IdFuncionario INT PRIMARY KEY AUTO_INCREMENT,
 nomeFuncionario VARCHAR(45) NOT NULL,
+telefoneFuncionario VARCHAR(45),
+cpfGestor VARCHAR(14),
 emailFuncionario VARCHAR(45) NOT NULL,
-senhaFuncionario VARCHAR(45) NOT NULL,
-fkGestor INT, FOREIGN KEY(fkGestor) REFERENCES gestor(IdGestor))AUTO_INCREMENT = 1100;
+fkSetor INT, FOREIGN KEY(fkSetor) REFERENCES setor(IdSetor),
+senhaGestor VARCHAR(45),
+fkGestor INT, FOREIGN KEY(fkGestor) REFERENCES funcionario(IdFuncionario)
+)AUTO_INCREMENT = 1000;
+
+CREATE TABLE chamados(
+idChamado INT PRIMARY KEY AUTO_INCREMENT,
+cartegoriaChamado VARCHAR(45) NOT NULL,
+descricaoChamado VARCHAR(250)) AUTO_INCREMENT = 1500;
+
 
 CREATE TABLE computadores(
 IdComputador INT PRIMARY KEY AUTO_INCREMENT,
@@ -50,32 +51,31 @@ fkFuncionario INT, FOREIGN KEY(fkFuncionario) REFERENCES funcionario(IdFuncionar
 CREATE TABLE softwares(
 IdSoftwares INT PRIMARY KEY AUTO_INCREMENT,
 nomeSoftware VARCHAR(45) NOT NULL,
+usuario VARCHAR(45) NOT NULL,
 cartegoriaSoftware VARCHAR(45))AUTO_INCREMENT = 2300;
 
-CREATE TABLE chamados(
-IdChamado INT PRIMARY KEY AUTO_INCREMENT,
-cartegoriaChamado VARCHAR(45),
-descricaoChamado VARCHAR(300))AUTO_INCREMENT = 3300;
 
 CREATE TABLE computadoresSoftwares(
 FKidComputador INT, FOREIGN KEY(FKidComputador) REFERENCES computadores(IdComputador),
 FKidSoftware INT, FOREIGN KEY(FKidSoftware) REFERENCES softwares(IdSoftwares),
 PRIMARY KEY(FKidComputador, FKidSoftware),
-softwaresLiberados VARCHAR(45),
+usuario VARCHAR(45) NOT NULL,
+bloqueado VARCHAR(2),
 FKidChamado INT, FOREIGN KEY(FKidChamado) REFERENCES chamados(IdChamado));
 
-CREATE TABLE peca(
-IdPeca INT PRIMARY KEY AUTO_INCREMENT,
-valor DOUBLE NOT NULL,
-modelo VARCHAR(45) NOT NULL,
-fkChamado INT, FOREIGN KEY(fkChamado) REFERENCES chamados(IdChamado))AUTO_INCREMENT = 5000;
 
 CREATE TABLE componentes(
 IdComponente INT PRIMARY KEY AUTO_INCREMENT,
 tipo VARCHAR(50) NOT NULL,
-fkComputadores INT, FOREIGN KEY(fkComputadores) REFERENCES computadores(IdComputador),
-fkPeca INT, FOREIGN KEY(fkPeca) REFERENCES peca(IdPeca)
+fkComputadores INT, FOREIGN KEY(fkComputadores) REFERENCES computadores(IdComputador)
 )AUTO_INCREMENT = 4000;
+
+CREATE TABLE regisitros(
+IdRegistro INT PRIMARY KEY AUTO_INCREMENT,
+emUso VARCHAR(10),
+temperatura VARCHAR(5),
+fkComponentes INT, FOREIGN KEY(fkComponentes) REFERENCES componentes(IdComponente))AUTO_INCREMENT = 5000;
+
 
 
 

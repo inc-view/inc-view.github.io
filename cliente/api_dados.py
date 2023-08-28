@@ -57,7 +57,8 @@ elif opcao == "1":
     disco_historico = []
     cpu_soma = 0
     ram_soma = 0
-    disco_soma = 0
+    disco_usado_soma = 0
+    disco_total_soma = 0
 
     while True:
         os.system('cls')
@@ -124,14 +125,16 @@ elif opcao == "1":
 
         cpu_soma += cpu_use
         ram_soma += ram_use.percent
-        disco_soma += disk_use_list[0].percent
+        for disco in disk_use_list:
+            disco_usado_soma += disco.used
+            disco_total_soma += disco.total
         cont += 1
 
         if (cont >= 30):
 
             cpu_historico.append(round(cpu_soma / 30, 2))
             ram_historico.append(round(ram_soma / 30, 2))
-            disco_historico.append(round(disco_soma / 30, 2))
+            disco_historico.append(round((100 * disco_usado_soma) / (disco_total_soma), 2))
 
             comando.execute(
                 "INSERT INTO registro (usoCpu, usoRam, usoDisco, dataRegistro) VALUES "
@@ -141,10 +144,11 @@ elif opcao == "1":
 
             cpu_soma = 0
             ram_soma = 0
-            disco_soma = 0
+            disco_usado_soma = 0
+            disco_total_soma = 0
             cont = 0
-        print('\nHistórico: ')
-        print('CPU: ', cpu_historico)
-        print('RAM: ', ram_historico)
-        print('Disco: ', disco_historico)
+        #print('\nHistórico: ')
+        #print('CPU:\n', cpu_historico)
+        #print('RAM:\n', ram_historico)
+        #print('Disco:\n', disco_historico)
         time.sleep(1)

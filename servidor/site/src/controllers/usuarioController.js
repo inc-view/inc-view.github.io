@@ -86,8 +86,31 @@ function cadastrar(req, res) {
             );
     }
 }
+function listar(req, res) {
+    var idUsuario = req.params.id
+    if(idUsuario == undefined) {
+        res.status(400).send("Seu ID está Undefined");
+    }
+    else{
+        usuarioModel.listar(idUsuario)
+        .then(
+            function(resultado){
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }
+        ).catch(function (erro) {
+            console.error(erro);
+            res.status(500).json(erro.sqlMessage);
+            console.error("Erro na consulta")
+        })
+    }
 
+}
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    listar
 }

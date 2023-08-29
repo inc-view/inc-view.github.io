@@ -6,11 +6,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="/site/public/css/dashboard2.css">
 <link rel="stylesheet" href="/site/public/css/dashboards.css">
+<<<<<<< HEAD
 <link rel="icon" href="./assets/icon/favicon-32x32.png" />
+=======
+>>>>>>> d731396247fab87a3b86c47a70574a85ed235693
 </head>
 <body>
-
-  
 <div class="container">
    <div class="app-left">
     <button class="close-menu">
@@ -26,13 +27,19 @@
       <li class="nav-list-item active">
         <a class="nav-list-link" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
-          Dashboard
+          Status Geral
         </a>
       </li>
       <li class="nav-list-item">
-        <a class="nav-list-link" href="dashboard3.html">
+        <a class="nav-list-link" href="dashboard3 copy.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           Time
+        </a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="dashboard4.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Segurança
         </a>
       </li>
     </ul>
@@ -40,33 +47,16 @@
   <div class="app-main">
     <div class="main-header-line">
       <h1 id="usernameHeader"></h1>
-      <!-- <div class="action-buttons">
-        <button class="open-right-area">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </button>
-      <button class="menu-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      </div> -->
+     
     </div>
     <div class="chart-row three">
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="applicationsLabel">Valor atual</h2>
-            <span id="applicationsNumber"></span>
+            <h2 id="applicationsLabel">Total de computadores monitorados</h2>
+            <!-- <span id="applicationsNumber"></span> -->
+            <span>20</span>
         </div>
-          <div class="chart-svg">
-            <svg viewBox="0 0 36 36" class="circular-chart pink">
-      <path class="circle-bg" d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-      <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-      <text x="18" y="20.35" class="percentage">30%</text>
-    </svg>
-          </div>
         </div>
       </div>
       <div class="chart-container-wrapper">
@@ -75,7 +65,7 @@
             <div class="chart-info-row">
               <div class="status-row">
               <div id="status" class="status"></div>
-              <h2 id="shortlistedLabel">Status</h2>
+              <h2 id="shortlistedLabel">Status de integridade dos sistemas</h2>
               </div>
             <div>
               <div id="resultado-status" class="status"></div>
@@ -84,7 +74,7 @@
            <span id="statusSelect" onchange="updateStatus()"></span>
           </div>
           <div class="chart-svg">
-            <svg viewBox="0 0 36 36" class="circular-chart blue">
+            
       <path class="circle-bg" d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"></path>
@@ -99,19 +89,9 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Lucro realizado</h2>
-            <span id="peopleNumber"></span>
-        </div>
-           <div class="chart-svg">
-            <svg viewBox="0 0 36 36" class="circular-chart orange">
-      <path class="circle-bg" d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-      <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-      <text x="18" y="20.35" class="percentage">90%</text>
-    </svg>
+            <h2 id="peopleLabel">Número de computadores online/offline</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span>10</span>
           </div>
         </div>
       </div>
@@ -121,11 +101,11 @@
       <div class="chart-container-wrapper big">
         <div class="chart-container">
           <div class="chart-container-header">
-            <h2>Ultimas remessas</h2>
+            <h2>Computadores online</h2>
             <span>Ultimos 30 dias</span>
           </div>
           <div class="line-chart">
-            <canvas id="chart" height="157px"></canvas>
+            <canvas id="chart" height="377px"></canvas>
           </div>
           <div class="chart-data-details">
             <div class="chart-details-header"></div>
@@ -141,7 +121,9 @@
               <span href="#">This month</span>
             </div>
             <div>
-              <div class="box-alertas"></div>
+              <div class="box-alertas" style="color: white;">
+                3 ameças de processos detectados
+              </div>
               <div class="box-alertas"></div>
               <div class="box-alertas"></div>
               <div class="box-alertas"></div>x

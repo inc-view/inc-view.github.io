@@ -5,7 +5,7 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="/site/public/css/dashboard2.css">
-<link rel="stylesheet" href="site/public/css/dashboard3.css">
+<link rel="stylesheet" href="/site/public/css/dashboard3.css">
 
 </head>
 <body>
@@ -55,14 +55,14 @@
       </button>
       </div> -->
     </div>
-    <h1 style="color: white;">Amanda Cupola</h1>
+    <h1 style="color: white;">Usuários</h1>
     <div class="chart-row three">
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="applicationsLabel">Número de processos em execução</h2>
+            <h2 id="applicationsLabel">Nome: Amanda Cupola</h2>
             <!-- <span id="applicationsNumber"></span> -->
-            <span>30</span>
+            <span><a style="color: red;" id="Status_usuario" href="dashboard3.html">Alerta</a></span>
         </div>
           <!-- <div class="chart-svg">
             <svg viewBox="0 0 36 36" class="circular-chart pink">
@@ -80,29 +80,18 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <div class="chart-info-row">
-              <div class="status-row">
-              <div id="status" class="status"></div>
-              <h2 id="shortlistedLabel">Status do computador</h2>
-              </div>
-            <div>
-              <div id="resultado-status" class="status"></div>
-            </div>
-            </div>
-           <span id="statusSelect" onchange="updateStatus()"></span>
-          </div>
-          <div class="chart-svg">
-      
-    
+            <h2 id="peopleLabel">Nome: Laura Guerra</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span style="color: red;" id="Status_usuario">Alerta</span>
           </div>
         </div>
       </div>
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Processos de risco</h2>
+            <h2 id="peopleLabel">Nome: Daniel</h2>
             <!-- <span id="peopleNumber"></span> -->
-            <span>1</span>
+            <span style="color: red;" id="Status_usuario">Alerta</span>
           </div>
         </div>
       </div>
@@ -112,9 +101,39 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="applicationsLabel">Média de uso da CPU</h2>
+            <h2 id="applicationsLabel">Nome: Viviane Cupola</h2>
             <!-- <span id="applicationsNumber"></span> -->
-            <span>50  Gb</span>
+            <span id="Status_usuario">Estável</span>
+        </div>
+        </div>
+      </div>
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Emily Ferreira</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span id="Status_usuario">Estável</span>
+          </div>
+        </div>
+      </div>
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Bruna Sanguine</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span id="Status_usuario">Estável</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="chart-row three">
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="applicationsLabel">Nome: Gustavo Silva</h2>
+            <!-- <span id="applicationsNumber"></span> -->
+            <span>Estável</span>
         </div>
           <!-- <div class="chart-svg">
             <svg viewBox="0 0 36 36" class="circular-chart pink">
@@ -132,54 +151,53 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Média de uso da memória</h2>
+            <h2 id="peopleLabel">Nome: Ednei Ferreira</h2>
             <!-- <span id="peopleNumber"></span> -->
-            <span>30 Gb</span>
+            <span>Estável</span>
           </div>
         </div>
       </div>
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Média de uso do disco</h2>
+            <h2 id="peopleLabel">Nome: Laura Queri</h2>
             <!-- <span id="peopleNumber"></span> -->
-            <span>30 Gb</span>
+            <span>Estável</span>
           </div>
         </div>
       </div>
       
     </div>
-    <div class="chart-row two">
-      <div class="chart-container-wrapper big">
+    <div class="chart-row three">
+      <div class="chart-container-wrapper">
         <div class="chart-container">
-          <div class="chart-container-header">
-            <h2>Tendência de desempenho </h2>
-            <span>Ultimos 30 dias</span>
-          </div>
-          <div class="line-chart">
-            <canvas id="chart" height="157px"></canvas>
-          </div>
-          <div class="chart-data-details">
-            <div class="chart-details-header"></div>
-          </div>
+          <div class="chart-info-wrapper">
+            <h2 id="applicationsLabel">Nome: Beatriz Rosa</h2>
+            <!-- <span id="applicationsNumber"></span> -->
+            <span>Estável</span>
         </div>
-      </div>     
-      <div class="chart-container-wrapper small">
+        </div>
+      </div>
+      <div class="chart-container-wrapper">
         <div class="chart-container">
-          <div class="chart-container-header">
-            <div class="dois">
-            <div class="alerta-titulo">
-              <h2>alertas</h2>
-              <span href="#">This month</span>
-            </div>
-            
-          </div>
-            <div>
-          </div>
-        </div> 
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Kauan Cruz</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span>Estável</span>
           </div>
         </div>
       </div>
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Samuel Dias</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span>Estável</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
     </div>
   </div>
 </div>

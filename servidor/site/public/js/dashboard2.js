@@ -108,28 +108,24 @@ function setStatusColor(id) {
 	switch (id) {
 	  case "entregue":
 		statusElement.style.background = "green";
-		resultadoElement.textContent = "Entregue";
-		resultadoElement.style.color = "white";    
-		resultadoElement.style.marginLeft = "20px"; 
+		resultadoElement.textContent = "Online";
+		resultadoElement.style.color = "white";   
 		break;
 	  case "em_analise":
 		statusElement.style.background = "yellow";
 		resultadoElement.textContent = "Em Análise";
 		resultadoElement.style.color = "white";
-		resultadoElement.style.marginLeft = "20px"; 
 		break;
 	  case "processamento":
 		statusElement.style.background = "red";
-		resultadoElement.textContent = "Processamento";
+		resultadoElement.textContent = "Offline";
 		resultadoElement.style.color = "white";
-		resultadoElement.style.marginLeft = "20px"; 
 	
 		break;
 	  default:
 		statusElement.style.background = "gray";
 		resultadoElement.textContent = "Desconhecido";
 		resultadoElement.style.color = "white";
-		resultadoElement.style.marginLeft = "20px"; 
 	}
   }
   
@@ -137,4 +133,22 @@ function setStatusColor(id) {
   const statusId = "entregue"; // Pode ser "entregue", "em_analise" ou "processamento"
   setStatusColor(statusId);
 
-  
+  // Status_usuario
+
+  function setStatusColor(id) {
+	const statusElement = document.getElementById("Status_usuario");
+	const resultadoElement = document.getElementById("result-status");
+	switch (id) {
+	  case "Alerta":
+		statusElement.style.background = "green";
+		resultadoElement.textContent = "Online";
+		resultadoElement.style.color = "white";   
+		break;
+	  case "Normal":
+		statusElement.style.background = "red";
+		resultadoElement.textContent = "Em Análise";
+		resultadoElement.style.color = "white";
+		break;
+	  default:
+	}
+  }

@@ -62,6 +62,8 @@ body {
   height: var(--tamanho-banner);
   background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .banner .container {

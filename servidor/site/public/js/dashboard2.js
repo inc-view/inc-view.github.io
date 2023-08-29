@@ -108,28 +108,24 @@ function setStatusColor(id) {
 	switch (id) {
 	  case "entregue":
 		statusElement.style.background = "green";
-		resultadoElement.textContent = "Entregue";
-		resultadoElement.style.color = "white";    
-		resultadoElement.style.marginLeft = "20px"; 
+		resultadoElement.textContent = "Online";
+		resultadoElement.style.color = "white";   
 		break;
 	  case "em_analise":
 		statusElement.style.background = "yellow";
 		resultadoElement.textContent = "Em Análise";
 		resultadoElement.style.color = "white";
-		resultadoElement.style.marginLeft = "20px"; 
 		break;
 	  case "processamento":
 		statusElement.style.background = "red";
-		resultadoElement.textContent = "Processamento";
+		resultadoElement.textContent = "Offline";
 		resultadoElement.style.color = "white";
-		resultadoElement.style.marginLeft = "20px"; 
 	
 		break;
 	  default:
 		statusElement.style.background = "gray";
 		resultadoElement.textContent = "Desconhecido";
 		resultadoElement.style.color = "white";
-		resultadoElement.style.marginLeft = "20px"; 
 	}
   }
   

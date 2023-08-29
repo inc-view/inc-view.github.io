@@ -243,3 +243,108 @@ body {
   margin-top: 40px;
   letter-spacing: 4px
 }
+
+.container input {
+  z-index: 2;
+}
+
+#checkbox-menu {
+  position: absolute;
+  opacity: 0;
+}
+
+label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+}
+
+label span {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background-color: #03e9f4;
+  transition: 0.25s ease-in-out;
+}
+
+/* position das linhas do hamburguinho */
+label span:nth-child(1) {
+  top: 0;
+}
+
+label span:nth-child(2) {
+  top: 8px;
+}
+
+label span:nth-child(3) {
+  top: 16px;
+}
+
+/* o que acontece quando esta checked para cada spam */
+#checkbox-menu:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#checkbox-menu:checked + label span:nth-child(2) {
+  opacity: 0; /*esse vai sumir pq eh o x */
+}
+
+#checkbox-menu:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+/* agora o menu que some */
+.menu {
+  background-color: #ededed;
+  position: absolute;
+  width: 400px;
+  padding: 80px;
+  padding-top: 150px;
+  /* para mover */
+  margin: -100px 0 0 -50px;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transform-origin: 0% 0%;
+
+  list-style-type: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+.menu li {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.menu li:hover {
+  color: #03e9f4;
+  font-weight: bold;
+}
+
+#checkbox-menu:checked ~ ul {
+  transform: none;
+}
+
+.menu-header{
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-header h5{
+  margin: 0px 20px;
+  font-size: 23px;
+}

@@ -1,0 +1,18 @@
+
+.box{
+    padding-top: 30vh;
+    display: block;
+    margin-top: 1000px;
+}
+.content{
+    padding: 1.5vw;
+    background-color: lightblue;
+    margin: auto;
+    border-radius: 5px;
+}
+.information{
+    display: flex;
+}
+.coluna{
+    margin-right: 5vw;
+}

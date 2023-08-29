@@ -21,8 +21,14 @@ function cadastrar(nome, email, senha, cpf , telefone) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+function listar(idUsuario){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
+    var instrucao = `SELECT nomeFuncionario, telefoneFuncionario, cpfGestor, emailFuncionario WHERE idFuncionario = '${idUsuario}';`;
+    return database.executar(instrucao);
+}
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    listar
 };

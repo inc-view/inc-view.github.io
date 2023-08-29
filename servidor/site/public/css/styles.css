@@ -3765,7 +3765,6 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: inherit;
   align-items: center;
-  justify-content: space-between;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -10952,6 +10951,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -11304,7 +11304,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-big{
-  width: 389px;
+  width: 27.9vw;
   background-color: #0E9594;
   height: 475px;
   opacity: 89%;
@@ -11327,7 +11327,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .servicos-box-small{
-  width: 392px;
+  width: 28vw;
   background-color: #001F45;
   height: 230px;
   opacity: 89%;
@@ -11840,3 +11840,120 @@ width: 40%;
 .box-contact{
   height: 105%;
 }
+
+.container input {
+  z-index: 2;
+}
+
+#checkbox-menu {
+  position: absolute;
+  opacity: 0;
+}
+
+label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+}
+
+label span {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background-color: #0aa2c0;
+  transition: 0.25s ease-in-out;
+}
+
+/* position das linhas do hamburguinho */
+label span:nth-child(1) {
+  top: 0;
+}
+
+label span:nth-child(2) {
+  top: 8px;
+}
+
+label span:nth-child(3) {
+  top: 16px;
+}
+
+/* o que acontece quando esta checked para cada spam */
+#checkbox-menu:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#checkbox-menu:checked + label span:nth-child(2) {
+  opacity: 0; /*esse vai sumir pq eh o x */
+}
+
+#checkbox-menu:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+/* agora o menu que some */
+.menu {
+  background-color: #ededed;
+  position: absolute;
+  width: 290px;
+  padding: 80px;
+  padding-top: 150px;
+  /* para mover */
+  margin: 344px 0 0 -58px;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transform-origin: 0% 0%;
+
+  list-style-type: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+.menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.menu li:hover {
+  color: tomato;
+  font-weight: bold;
+}
+
+#checkbox-menu:checked ~ ul {
+  transform: none;
+}
+
+.menu-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 10px;
+  width: 50%;
+}
+
+.menu-header h5{
+  margin: 5px 10px;
+}
+
+#mainNav .container {
+  display: flex;
+}
+
+@media only screen and (max-width: 950px) {
+  #mainNav .container {
+    width: 100%;
+  }
+}
+

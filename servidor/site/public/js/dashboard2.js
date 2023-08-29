@@ -133,4 +133,22 @@ function setStatusColor(id) {
   const statusId = "entregue"; // Pode ser "entregue", "em_analise" ou "processamento"
   setStatusColor(statusId);
 
-  
+  // Status_usuario
+
+  function setStatusColor(id) {
+	const statusElement = document.getElementById("Status_usuario");
+	const resultadoElement = document.getElementById("result-status");
+	switch (id) {
+	  case "Alerta":
+		statusElement.style.background = "green";
+		resultadoElement.textContent = "Online";
+		resultadoElement.style.color = "white";   
+		break;
+	  case "Normal":
+		statusElement.style.background = "red";
+		resultadoElement.textContent = "Em Análise";
+		resultadoElement.style.color = "white";
+		break;
+	  default:
+	}
+  }

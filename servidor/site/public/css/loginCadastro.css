@@ -349,3 +349,13 @@ label span:nth-child(3) {
   font-size: 23px;
 }
 
+.login h1{
+  font-size: 23px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.login a{
+  text-decoration: none;
+  color: white;
+}

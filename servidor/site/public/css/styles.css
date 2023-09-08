@@ -11540,7 +11540,7 @@ padding: 1%;
 
 .box-time{
   background: #020D36;
-  width: 368px;
+  width: 310px;
   margin-left: 2%;
 }
 
@@ -11972,6 +11972,7 @@ label span:nth-child(3) {
   width: 100%;
   border-radius: 10px;
   display: flex;
+justify-content: center;
 }
 
 .on {

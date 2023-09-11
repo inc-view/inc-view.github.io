@@ -4,6 +4,10 @@ import time
 import mysql.connector
 import mysql.connector.errorcode
 import matplotlib.pyplot as plt
+import requests
+import json
+
+webbook = "https://hooks.slack.com/services/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"
 
 cor = {
     'verde': "\033[92m",
@@ -140,6 +144,11 @@ elif opcao == "1":
                 "INSERT INTO registro (usoCpu, usoRam, usoDisco, dataRegistro) VALUES "
                 f"({cpu_historico[-1]},{ram_historico[-1]},{disco_historico[-1]}, now());"
             )
+
+            if (ram_historico[-1] <= 90):
+                mensagem = { "text": "A RAM está em estado crítico" }
+                requests.post(webbook, data=json.dumps(mensagem))
+
             conexao.commit()
 
             cpu_soma = 0

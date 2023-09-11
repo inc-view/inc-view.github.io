@@ -266,7 +266,7 @@ label span {
   display: block;
   z-index: 1;
   height: 5px;
-  width: 100%;
+  width: 30px;
   border-radius: 30px;
   background-color: #03e9f4;
   transition: 0.25s ease-in-out;

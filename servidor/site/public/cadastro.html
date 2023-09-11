@@ -14,81 +14,95 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="shortcut icon" type="image/jpg" href="/imgs/favicon.ico"/>
+    rel="stylesheet" />
+  <link rel="shortcut icon" type="image/jpg" href="/imgs/favicon.ico" />
 
 </head>
 
-  <div class="header">
-    <div class="menu-header">
-      <!-- hamburguer starts here -->
-      <input type="checkbox" id="checkbox-menu">
-      <label for="checkbox-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-      </label>
-      <!-- hamburguer ends here -->
-      <ul class="menu"> 
-          <a href="#"><li>Serviços</li></a>
-          <a href="#"><li>Sobre nós</li></a>
-          <a href="#"><li>Time</li></a>
-          <a href="#"><li>Contato</li></a>
-          <a href="#"><li>------------</li></a>
-          <a href="#"><li>Login</li></a>
-          <a href="#"><li>Cadastrar</li></a>
-        </ul>
-        <h5>Menu</h5>
-    </div>
-    <img id="imgLogo" src="../imgs/LogoNameLight.png" alt="">
-   <div class="login"><a href="login.html">
-    <h1>Login</h1></a>
-   </div>
-  </div>
-  <div class="login-box container-sm mt-5">
-    <h2>Cadastrar</h2>
-    <form>
-      <div class="user-box">
-        <input id="iptNome" type="text" name="" required=""/>
-        <label>Nome:</label>
-      </div>
-      <div class="user-box">
-        <input id="iptEmail" type="text" name="" required=""/>        
-      <label>Email:</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="" required="" id="iptCPF">
-        <label>CPF:</label>
-      </div>
-      <div class="user-box">
-        <input type="text" name="" required="" id="iptTelefone">
-        <label>Telefone:</label>
-      </div>
-      <div class="user-box">
-        <input id="iptSenha" type="password" name="" required=""/>
-        <label>Senha:</label>
-      </div>
-      <div class="user-box">
-        <input type="password" name="" required="" id="iptConfirmarSenha">
-        <label>Confirmar Senha:</label>
-      </div>
-      <a href="#" onclick="verify()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Cadastrar
+<div class="header">
+  <div class="menu-header">
+    <!-- hamburguer starts here -->
+    <input type="checkbox" id="checkbox-menu">
+    <label for="checkbox-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <!-- hamburguer ends here -->
+    <ul class="menu">
+      <a href="#">
+        <li>Serviços</li>
       </a>
-      <div class="login-box-bottom">
-        <p>Já tem uma conta?
-        <p onclick="window.location='login.html';" class="cadastro">Entrar</p>
-        </p>
-      </div>
-    </form>
+      <a href="#">
+        <li>Sobre nós</li>
+      </a>
+      <a href="#">
+        <li>Time</li>
+      </a>
+      <a href="#">
+        <li>Contato</li>
+      </a>
+      <a href="#">
+        <li>------------</li>
+      </a>
+      <a href="#">
+        <li>Login</li>
+      </a>
+      <a href="#">
+        <li>Cadastrar</li>
+      </a>
+    </ul>
+    <h5>Menu</h5>
   </div>
+  <img id="imgLogo" src="../imgs/LogoNameLight.png" alt="">
+  <div class="login"><a href="login.html">
+      <h1>Login</h1>
+    </a>
+  </div>
+</div>
+<div class="login-box container-sm mt-5">
+  <h2>Cadastrar</h2>
+  <form>
+    <div class="user-box">
+      <input id="iptNome" type="text" name="" required="" />
+      <label>Nome:</label>
+    </div>
+    <div class="user-box">
+      <input id="iptEmail" type="text" name="" required="" />
+      <label>Email:</label>
+    </div>
+    <div class="user-box">
+      <input type="text" name="" required="" id="iptCPF">
+      <label>CPF:</label>
+    </div>
+    <div class="user-box">
+      <input type="text" name="" required="" id="iptTelefone">
+      <label>Telefone:</label>
+    </div>
+    <div class="user-box">
+      <input id="iptSenha" type="password" name="" required="" />
+      <label>Senha:</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="" id="iptConfirmarSenha">
+      <label>Confirmar Senha:</label>
+    </div>
+    <a href="#" onclick="verify()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Cadastrar
+    </a>
+    <div class="login-box-bottom">
+      <p>Já tem uma conta?
+      <p onclick="window.location='login.html';" class="cadastro">Entrar</p>
+      </p>
+    </div>
+  </form>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
@@ -97,124 +111,132 @@
 
 <script>
 
-function verify() {
-        var nome = iptNome.value
-        var email = iptEmail.value
-        var cpf = iptCPF.value
-        var telefone = iptTelefone.value
-        var senha = iptSenha.value
-        var confirmarSenha = iptConfirmarSenha.value
+  function verify() {
+    var nome = iptNome.value
+    var email = iptEmail.value
+    var cpf = iptCPF.value
+    var telefone = iptTelefone.value
+    var senha = iptSenha.value
+    var confirmarSenha = iptConfirmarSenha.value
 
-        var erro = false
-        
-        if (nome == "" || email == "" || senha == "" || confirmarSenha == "" || cpf == "" || telefone == "") {
-          alert("Por favor informe todos os dados.")
-          erro = true;
-        }
-        
-        if ( senha.length < 8 || !/\d/.test(senha) ) {
-            alert("Informe uma senha válida. (Min. 8 caracteres e um número)")
-            erro = true;
-        }
+    var erro = false
 
-        if (confirmarSenha != senha) {
-            alert("As senhas não são iguais, por favor as informe corretamente.")
-            erro = true;
-
-        if (nome.length <= 2) {
-            alert("Informe um nome válido")
-            erro = true;
-        }
-
-        if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-            alert("Informe um email válido.")
-            erro = true;
-        }
-
-        if (cpf.length < 11 || cfp.length > 11) {
-          alert("Informe um CPF válido. Ex:12345678901")
-        }
-
-        if (telefone.length != 9) {
-            alert("Informe um telefone válido. Ex:912123434")
-            erro = true;
-        }
-
-        }
-
-        if (erro == false) {
-            cadastrar()
-        }
+    if (nome == "" || email == "" || senha == "" || confirmarSenha == "" || cpf == "" || telefone == "") {
+      alert("Por favor informe todos os dados.")
+      erro = true;
     }
 
-    function cadastrar() {
+    if (senha.length < 8 || !/\d/.test(senha)) {
+      alert("Informe uma senha válida. (Min. 8 caracteres e um número)")
+      erro = true;
+    }
 
-//Recupere o valor da nova input pelo nome do id
-// Agora vá para o método fetch logo abaixo
-var nomeVar = iptNome.value;
-var emailVar = iptEmail.value;
-var senhaVar = iptSenha.value;
-var confirmacaoSenhaVar = iptConfirmarSenha.value;
-var cpfVar = iptCPF.value;
-var telefoneVar = iptTelefone.value;
-if (
-  nomeVar == "" ||
-  emailVar == "" ||
-  senhaVar == "" ||
-  confirmacaoSenhaVar == "" ||
-  cpfVar == "" ||
-  telefoneVar == ""
-) {
-  cardErro.style.display = "block";
-  mensagem_erro.innerHTML =
-    "(Mensagem de erro para todos os campos em branco)";
+    if (confirmarSenha != senha) {
+      alert("As senhas não são iguais, por favor as informe corretamente.")
+      erro = true;
 
+      if (nome.length <= 2) {
+        alert("Informe um nome válido")
+        erro = true;
+      }
 
-  return false;
-} else {
- 
-}
+      if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        alert("Informe um email válido.")
+        erro = true;
+      }
 
-// Enviando o valor da nova input
-fetch("/usuarios/cadastrar", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    // crie um atributo que recebe o valor recuperado aqui
-    // Agora vá para o arquivo routes/usuario.js
-    nomeServer: nomeVar,
-    emailServer: emailVar,
-    senhaServer: senhaVar,
-    cpfServer: cpfVar,
-    telefoneServer: telefoneVar,
-  }),
-})
-  .then(function (resposta) {
-    console.log("resposta: ", resposta);
+      if (cpf.length < 11 || cfp.length > 11) {
+        alert("Informe um CPF válido. Ex:12345678901")
+      }
 
-    if (resposta.ok) {
+      if (telefone.length != 9) {
+        alert("Informe um telefone válido. Ex:912123434")
+        erro = true;
+      }
+
+    }
+
+    if (erro == false) {
+      cadastrar()
+    }
+  }
+
+  function cadastrar() {
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = iptNome.value;
+    var emailVar = iptEmail.value;
+    var senhaVar = iptSenha.value;
+    var confirmacaoSenhaVar = iptConfirmarSenha.value;
+    var cpfVar = iptCPF.value;
+    var telefoneVar = iptTelefone.value;
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" ||
+      cpfVar == "" ||
+      telefoneVar == ""
+    ) {
       cardErro.style.display = "block";
-
       mensagem_erro.innerHTML =
-        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-      setTimeout(() => {
-        window.location = "login.html";
-      }, "2000");
+        "(Mensagem de erro para todos os campos em branco)";
 
 
+      return false;
     } else {
-      throw "Houve um erro ao tentar realizar o cadastro!";
-    }
-  })
-  .catch(function (resposta) {
-    console.log(`#ERRO: ${resposta}`);
-;
-  });
 
-return false;
-}
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        cpfServer: cpfVar,
+        telefoneServer: telefoneVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          
+          iptNome.value = "";
+          iptEmail.value = "";
+          iptCPF.value = "";
+          iptSenha.value = "";
+          iptTelefone.value = "";
+          iptConfirmarSenha.value = "";
+          // cardErro.style.display = "block";
+
+          // mensagem_erro.innerHTML =
+          //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        ;
+      });
+
+    return false;
+  }
 
 </script>

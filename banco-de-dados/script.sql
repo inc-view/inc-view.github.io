@@ -62,15 +62,11 @@ bloqueado VARCHAR(2))AUTO_INCREMENT = 3000;
 CREATE TABLE componentes(
 IdComponente INT PRIMARY KEY AUTO_INCREMENT,
 tipo VARCHAR(50) NOT NULL,
+modelo VARCHAR(45),
 fkComputadores INT, FOREIGN KEY(fkComputadores) REFERENCES computadores(IdComputador)
 )AUTO_INCREMENT = 4000;
+select * from componentes;
 
-CREATE TABLE chamados(
-idChamado INT PRIMARY KEY AUTO_INCREMENT,
-cartegoriaChamado VARCHAR(45) NOT NULL,
-descricaoChamado VARCHAR(250),
-fkComputadoresSoftwares INT, FOREIGN KEY(fkComputadoresSoftwares) REFERENCES computadoresSoftwares(idComputadoresSoftwares),
-fkComponentes INT, FOREIGN KEY(fkComponentes) REFERENCES componentes(IdComponente))AUTO_INCREMENT = 1500;
 
 CREATE TABLE registros(
 IdRegistro INT PRIMARY KEY AUTO_INCREMENT,
@@ -79,6 +75,13 @@ temperatura VARCHAR(5),
 fkComponentes INT, FOREIGN KEY(fkComponentes) REFERENCES componentes(IdComponente))AUTO_INCREMENT = 5000;
 
 
-
+CREATE VIEW infoMaquina AS
+SELECT func.nomeFuncionario, computadores.patrimonio, compo.modelo,  reg.emUso, reg.Temperatura,
+CASE 
+	WHEN reg.Temperatura is null OR reg.Temperatura = '' THEN 'Componente sem aferição de temperaturo' 
+    WHEN reg.emUso is null OR reg.emUso = '' THEN 'Componente sem aferição de uso'  END as estado
+		FROM funcionario as func JOIN computadores ON IdFuncionario = fkFuncionario
+		JOIN componentes as compo ON  IdComputador = fkComputadores
+        JOIN registros as reg ON fkComponentes = IdComponente;
 
 

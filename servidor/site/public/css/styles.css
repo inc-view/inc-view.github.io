@@ -12679,7 +12679,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #001F45;
 }
 
 #mainNav .navbar-toggler {
@@ -13896,8 +13896,7 @@ label span:nth-child(3) {
 
 @media (max-width: 576px) {
   .box-contact {
-    width: 55vw;
-    margin-left: -40%;
+    width: 78vw;
   }
 
   .img-ex img {
@@ -13927,6 +13926,13 @@ label span:nth-child(3) {
   #next-button img {
     width: 95%;
     height: 80%;
+  }
+  .container-slider{
+    min-height: 40vh;
+  }
+
+  .sessao-6{
+    height: 539px;
   }
 }
 

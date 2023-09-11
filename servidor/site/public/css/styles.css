@@ -7766,7 +7766,6 @@ fieldset:disabled .btn {
 }
 
 .fixed-top {
-  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -13772,23 +13771,22 @@ label span:nth-child(3) {
 
 /* agora o menu que some */
 .menu {
-  background-color: #ededed;
+  background-color: #001F45;
   position: absolute;
-  width: 290px;
+  width: 300px;
   padding: 80px;
   padding-top: 150px;
   /* para mover */
-  margin: 344px 0 0 -58px;
+  margin: 344px 0 0 -66px;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   transform-origin: 0% 0%;
-
   list-style-type: none;
 }
 
 .menu a {
   text-decoration: none;
-  color: #232323;
+  color: white;
 
   transition: color 0.3s ease;
 }
@@ -13800,8 +13798,9 @@ label span:nth-child(3) {
 }
 
 .menu li:hover {
-  color: tomato;
+  color: #0baccc;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 #checkbox-menu:checked~ul {
@@ -13813,7 +13812,6 @@ label span:nth-child(3) {
   flex-direction: row;
   align-items: center;
   margin: 0px 10px;
-  width: 50%;
 }
 
 .menu-header h5 {
@@ -13915,4 +13913,11 @@ label span:nth-child(3) {
     width: 95%;
     height: 80%;
   }
+}
+
+.fixed-top{
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  height: 100px;
 }

@@ -305,6 +305,7 @@ label span:nth-child(3) {
   background-color: #ededed;
   position: absolute;
   width: 400px;
+  height: 200vh;
   padding: 80px;
   padding-top: 150px;
   /* para mover */

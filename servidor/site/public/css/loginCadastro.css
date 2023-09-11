@@ -258,7 +258,7 @@ label {
   position: relative;
   display: block;
   height: 22px;
-  width: 30px;
+  width: auto;
 }
 
 label span {

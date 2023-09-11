@@ -7766,6 +7766,7 @@ fieldset:disabled .btn {
 }
 
 .fixed-top {
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -12708,6 +12709,8 @@ p {
     border: none;
     background-color: transparent;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    background-color: #020d36;
+    border-bottom: solid 1px aqua;
   }
 
   #mainNav .navbar-brand {
@@ -13920,4 +13923,8 @@ label span:nth-child(3) {
   justify-content: space-between;
   padding: 2%;
   height: 100px;
+}
+
+.navbar navbar-expand-lg navbar-dark fixed-top{
+
 }

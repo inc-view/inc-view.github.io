@@ -338,3 +338,24 @@ label span:nth-child(3) {
 #checkbox-menu:checked ~ ul {
   transform: none;
 }
+
+.menu-header{
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-header h5{
+  margin: 0px 20px;
+  font-size: 23px;
+}
+
+.login h1{
+  font-size: 23px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.login a{
+  text-decoration: none;
+  color: white;
+}

@@ -19,9 +19,21 @@ function autenticar(req, res) {
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
-                        console.log("Login Correto")
-                        res.status(200).json(resultadoAutenticar);
-                            
+
+                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
+                            .then((resultadoAquarios) => {
+                                if (resultadoAquarios.length > 0) {
+                                    res.json({
+                                        id: resultadoAutenticar[0].id,
+                                        email: resultadoAutenticar[0].email,
+                                        nome: resultadoAutenticar[0].nome,
+                                        senha: resultadoAutenticar[0].senha,
+                                        aquarios: resultadoAquarios
+                                    });
+                                } else {
+                                    res.status(204).json({ aquarios: [] });
+                                }
+                            })
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -74,8 +86,31 @@ function cadastrar(req, res) {
             );
     }
 }
+function listar(req, res) {
+    var idUsuario = req.params.id
+    if(idUsuario == undefined) {
+        res.status(400).send("Seu ID está Undefined");
+    }
+    else{
+        usuarioModel.listar(idUsuario)
+        .then(
+            function(resultado){
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }
+        ).catch(function (erro) {
+            console.error(erro);
+            res.status(500).json(erro.sqlMessage);
+            console.error("Erro na consulta")
+        })
+    }
 
+}
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    listar
 }

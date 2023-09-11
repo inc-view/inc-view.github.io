@@ -10,6 +10,10 @@ import mysql.connector
 import mysql.connector.errorcode
 # Pacote matplotlib para exibir o gráfico
 import matplotlib.pyplot as plt
+import requests
+import json
+
+webbook = "https://hooks.slack.com/services/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"
 
 # Esta variável é só para facilitar a edição de cores, que são usadas como métricas
 # Ao invés de ficar colocando o código \033[92m] é so chamar cor['verde'], p.ex.
@@ -236,6 +240,11 @@ elif opcao == "1":
             # aqui tem um macetezinho que eu acho útil de python, que você pode usar índices negativos
             # em arrays. Basicamente eles siginificam que você conta de trás para frente, então o índice
             # -1 te da o último item do array, o -2 dá o penúltimo, e assim por diante.
+
+
+            if (ram_historico[-1] <= 90):
+                mensagem = { "text": "A RAM está em estado crítico" }
+                requests.post(webbook, data=json.dumps(mensagem))
 
             conexao.commit()
 

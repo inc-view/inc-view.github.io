@@ -1,9 +1,9 @@
-create database apiViss;
-use apiViss;
+CREATE DATABASE apiViss;
+USE apiViss;
 
-CREATE USER 'viss'@'localhost' identified by 'urubu100';
-GRANT INSERT, SELECT, UPDATE, DELETE ON apiViss.* to 'viss'@'localhost';
-flush privileges;	
+CREATE USER 'viss'@'localhost' IDENTIFIED BY 'urubu100';
+GRANT INSERT, SELECT, UPDATE, DELETE ON apiViss.* TO 'viss'@'localhost';
+FLUSH PRIVILEGES;
 
 CREATE TABLE registro(
 	idRegistro INT PRIMARY KEY AUTO_INCREMENT,
@@ -13,4 +13,4 @@ CREATE TABLE registro(
     dataRegistro DATETIME
 );
 
-select * from registro;
+SELECT * FROM registro;

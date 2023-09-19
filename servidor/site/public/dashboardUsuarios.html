@@ -4,12 +4,7 @@
   <meta charset="UTF-8">
   <title>Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="/public/css/dashboard2.css">
-<link rel="stylesheet" href="/public/css/dashboard3.css">
-<link rel="icon" href="./assets/icon/favicon-32x32.png" />
-
-<link rel="stylesheet" href="./css/dashboard2.css">
-<link rel="stylesheet" href="./css/dashboard3.css">
+<link rel="stylesheet" href="./css/dashboardGeral.css">
 
 </head>
 <body>
@@ -23,12 +18,12 @@
     <div class="name">
       <div class="foto">
       </div>
-      <h2 id="userName">Nicolas</h2>
+      <h2 id="userName">Carlos</h2>
     </div>
     <div class="linha"></div>
     <ul class="nav-list">
       <li class="nav-list-item">
-        <a class="nav-list-link" href="dashboard2.html">
+        <a class="nav-list-link" href="dashboardGeral.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
           Dashboard
         </a>
@@ -40,7 +35,7 @@
         </a>
       </li>
       <li class="nav-list-item">
-        <a class="nav-list-link" href="dashboard4.html">
+        <a class="nav-list-link" href="dashboardSeguranca.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           Segurança
         </a>
@@ -59,14 +54,14 @@
       </button>
       </div> -->
     </div>
-    <h1 style="color: white;">Amanda Cupola</h1>
+    <h1 style="color: white;">Usuários</h1>
     <div class="chart-row three">
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="applicationsLabel">Número de processos em execução</h2>
+            <h2 id="applicationsLabel">Nome: Amanda Cupola</h2>
             <!-- <span id="applicationsNumber"></span> -->
-            <span>30</span>
+            <span><a style="color: red;" id="Status_usuario" href="dashboardTime.html">Status: CPU crítica</a></span>
         </div>
           <!-- <div class="chart-svg">
             <svg viewBox="0 0 36 36" class="circular-chart pink">
@@ -84,29 +79,18 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <div class="chart-info-row">
-              <div class="status-row">
-              <div id="status" class="status"></div>
-              <h2 id="shortlistedLabel">Status do computador</h2>
-              </div>
-            <div>
-              <div id="resultado-status" class="status-2">Online</div>
-            </div>
-            </div>
-           <span id="statusSelect" onchange="updateStatus()"></span>
-          </div>
-          <div class="chart-svg">
-      
-    
+            <h2 id="peopleLabel">Nome: Laura Guerra</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span style="color: red;" id="Status_usuario">Status: Disco crítico</span>
           </div>
         </div>
       </div>
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Processos de risco</h2>
+            <h2 id="peopleLabel">Nome: Daniel</h2>
             <!-- <span id="peopleNumber"></span> -->
-            <span>1</span>
+            <span id="Status_usuario">Status: Estável</span>
           </div>
         </div>
       </div>
@@ -116,9 +100,39 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="applicationsLabel">Média de uso da CPU</h2>
+            <h2 id="applicationsLabel">Nome: Viviane Cupola</h2>
             <!-- <span id="applicationsNumber"></span> -->
-            <span>50  %</span>
+            <span id="Status_usuario">Estável</span>
+        </div>
+        </div>
+      </div>
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Emily Ferreira</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span id="Status_usuario">Estável</span>
+          </div>
+        </div>
+      </div>
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Bruna Sanguine</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span id="Status_usuario">Estável</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="chart-row three">
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="applicationsLabel">Nome: Gustavo Silva</h2>
+            <!-- <span id="applicationsNumber"></span> -->
+            <span>Estável</span>
         </div>
           <!-- <div class="chart-svg">
             <svg viewBox="0 0 36 36" class="circular-chart pink">
@@ -136,54 +150,53 @@
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Média de uso da memória</h2>
+            <h2 id="peopleLabel">Nome: Ednei Ferreira</h2>
             <!-- <span id="peopleNumber"></span> -->
-            <span>30 Gb</span>
+            <span>Estável</span>
           </div>
         </div>
       </div>
       <div class="chart-container-wrapper">
         <div class="chart-container">
           <div class="chart-info-wrapper">
-            <h2 id="peopleLabel">Média de uso do disco</h2>
+            <h2 id="peopleLabel">Nome: Laura Queri</h2>
             <!-- <span id="peopleNumber"></span> -->
-            <span>30 Gb</span>
+            <span>Estável</span>
           </div>
         </div>
       </div>
       
     </div>
-    <div class="chart-row two">
-      <div class="chart-container-wrapper big">
+    <div class="chart-row three">
+      <div class="chart-container-wrapper">
         <div class="chart-container">
-          <div class="chart-container-header">
-            <h2>Tendência de desempenho </h2>
-            <span>Ultimos 30 dias</span>
-          </div>
-          <div class="line-chart">
-            <canvas id="chart" height="157px"></canvas>
-          </div>
-          <div class="chart-data-details">
-            <div class="chart-details-header"></div>
-          </div>
+          <div class="chart-info-wrapper">
+            <h2 id="applicationsLabel">Nome: Beatriz Rosa</h2>
+            <!-- <span id="applicationsNumber"></span> -->
+            <span>Estável</span>
         </div>
-      </div>     
-      <div class="chart-container-wrapper small">
+        </div>
+      </div>
+      <div class="chart-container-wrapper">
         <div class="chart-container">
-          <div class="chart-container-header">
-            <div class="dois">
-            <div class="alerta-titulo">
-              <h2>alertas</h2>
-              <span href="#">This month</span>
-            </div>
-            
-          </div>
-            <div>
-          </div>
-        </div> 
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Kauan Cruz</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span>Estável</span>
           </div>
         </div>
       </div>
+      <div class="chart-container-wrapper">
+        <div class="chart-container">
+          <div class="chart-info-wrapper">
+            <h2 id="peopleLabel">Nome: Samuel Dias</h2>
+            <!-- <span id="peopleNumber"></span> -->
+            <span>Estável</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
     </div>
   </div>
 </div>

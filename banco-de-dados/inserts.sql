@@ -56,14 +56,14 @@ INSERT INTO componentes (tipo, modelo, fkComputadores)VALUES
     ('CPU', 'Celeron', 3007),
     ('GPU', 'NVIDIA GeForce RTX 3080', 3007),
     ('RAM', '16GB DDR4', 3008);
-    select * from componentes;
-INSERT INTO registros (emUso, temperatura, fkComponentes)VALUES
-	('23%', '72°C',4000),
-    ('54%', '55°C',4001),
-    ('44%','',4002),
-    ('43%', '65°C', 4003),
-    ('75%', '75°C', 4004);
+    
+INSERT INTO registros (emUso, temperatura, dataRegistro, fkComponentes) VALUES
+    (23, '72°C', '2023-09-16 10:00:00', 4000),
+    (54, '55°C', '2023-09-16 11:00:00', 4001),
+    (44, '', '2023-09-16 12:00:00', 4002),
+    (43, '65°C', '2023-09-16 13:00:00', 4003),
+    (75, '75°C', '2023-09-16 14:00:00', 4004);
 
-INSERT INTO registros ( temperatura, fkComponentes)VALUES
-    ('50°C', 4005);
+INSERT INTO registros (temperatura, dataRegistro, fkComponentes) VALUES
+    (50, '2023-09-16 15:00:00', 4005);
 

@@ -70,11 +70,14 @@ select * from componentes;
 
 CREATE TABLE registros(
 IdRegistro INT PRIMARY KEY AUTO_INCREMENT,
-emUso VARCHAR(10),
+emUso INT,
 temperatura VARCHAR(5),
+dataRegistro DATETIME,
 fkComponentes INT, FOREIGN KEY(fkComponentes) REFERENCES componentes(IdComponente))AUTO_INCREMENT = 5000;
 
 
+
+-- VIEW solicitada pela marise 
 CREATE VIEW infoMaquina AS
 SELECT func.nomeFuncionario, computadores.patrimonio, compo.modelo,  reg.emUso, reg.Temperatura,
 CASE 

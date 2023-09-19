@@ -34,49 +34,41 @@
   <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#page-top"
-          ><img src="assets/img/logos/logoVISS.png" alt="Início"
-        /></a>
-        <!-- <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button> -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#servicos">Serviços</a>
-            </li>
-            <!-- li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li -->
-            <li class="nav-item">
-              <a class="nav-link" href="#sobreNos">Sobre Nós</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#time">Time</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contato">Contato</a>
-            </li>
+      <div class="menu-header">
+        <!-- hamburguer starts here -->
+        <input type="checkbox" id="checkbox-menu">
+        <label for="checkbox-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <!-- hamburguer ends here -->
+        <ul class="menu"> 
+          <a href="##sobrenos"><li>Sobre nós</li></a>
+          <a href="##servicos"><li>Serviços</li></a>
+            <a href="##sessao-6"><li>Time</li></a>
+            <a href="##sessao-7"><li>Contato</li></a>
+            <a href=""><li></li></a>
+            <a href="login.html"><li>Login</li></a>
+            <a href="cadastro.html"><li>Cadastrar</li></a>
           </ul>
-        </div>
+          <h5>Menu</h5>
       </div>
+      <img src="assets/img/logos/LogoNameLight.png" alt="" width="90px">
+        <a href="login.html"><img src="assets/img/do-utilizador (1).png" alt="" width="40px"></a>
     </nav>
     <!-- Masthead-->
     <header class="masthead">
       <div class="container">
-        <div class="masthead-subheading">Seja Bem-Vindo!</div>
-        <div class="masthead-heading text-uppercase">É um prazer tê-lo aqui</div>
+        <div class="masthead-subheading display-1 ms-sm-4">Seja Bem-Vindo!</div>
+        <div class="masthead-heading text-uppercase display-5">É um prazer tê-lo aqui</div>
         <a class="btn btn-primary btn-xl text-uppercase" href="cadastro.html"
           >Cadastrar</a
         >
       </div>
     </header>
+
+    <section id="#sobrenos">
     <!-- Servicos-->
     <div class="servicos-box container">
       <div class="r">
@@ -95,19 +87,16 @@
             <img src="assets/img/correct 2.png" alt="" width="20px" /> Privacidade de dados
           </p>
           <p>
-            <img src="assets/img/correct 2.png" alt="" width="20px" /> Certificado
-          </p>
-          <p>
             <img src="assets/img/correct 2.png" alt="" width="20px" /> Segurança dos dados
           </p>
           <p>
-            <img src="assets/img/correct 2.png" alt="" width="20px" /> Protegido
+            <img src="assets/img/correct 2.png" alt="" width="20px" /> Proteção
           </p>
         </div>
 
         <div class="servicos-box-S col-12 col-md-8">
           <div class="servicos-box-small-container row px-3 p-md-5">
-            <div class="servicos-box-small col-12 col-md-5 me-3 mb-3">
+            <div class="servicos-box-small col-12 col-md-5 me-4 mb-3">
               <div class="box-servico-title">
                 <div class="box-servico-img">
                   <img
@@ -123,7 +112,7 @@
                 prejuízos financeiros e danos à reputação.
               </p>
             </div>
-            <div class="servicos-box-small col-12 col-md-5 mb-3">
+            <div class="servicos-box-small col-12 col-md-5 me-4 mb-3">
               <div class="box-servico-title">
                 <div class="box-servico-img">
                   <img
@@ -142,7 +131,7 @@
           </div>
 
           <div class="servicos-box-small-container row px-3 p-md-5">
-            <div class="servicos-box-small col-12 col-md-5 mb-3">
+            <div class="servicos-box-small col-12 col-md-5 me-4 mb-3">
               <div class="box-servico-title">
                 <div class="box-servico-img">
                   <img
@@ -157,7 +146,7 @@
                 Medidas de segurança ao navegar na internet e instalar programas.
               </p>
             </div>
-            <div class="servicos-box-small col-12 col-md-5 mb-3 mb-md-0">
+            <div class="servicos-box-small col-12 col-md-5 mb-3 me-4 mb-md-0">
               <div class="box-servico-title">
                 <div class="box-servico-img">
                   <img
@@ -176,7 +165,9 @@
         </div>
       </div>
     </div>
+  </section>
 
+  <section id="#servicos">
     <div class="servicos-box-2">
       <div class="servicos-box-2-img d-none d-md-block p-3">
         <img
@@ -189,7 +180,7 @@
       <div class="box-servico-titulo px-3 text-center">
         <div class="servico-titulo">
           <div class="servico-linha"></div>
-          <h2>Nosso serviço</h2>
+            <div class="title">Nosso serviço</div>
           <div class="servico-linha"></div>
         </div>
         <div>
@@ -207,6 +198,7 @@
         <button class="mx-auto p-3 servico-button">Entre em contato</button>
       </div>
     </div>
+  </section>
 
     <section>
       <div class="oque-Fazemos-titulo">
@@ -329,49 +321,62 @@
       </div>
     </section>
 
-    <section class="sessao-6">
-      <div class="container-time">
-        <div class="title-row">
-          <div class="servico-linha"></div>
-          <div class="title">Nosso time</div>
-          <div class="servico-linha"></div>
-        </div>
-        <h1>Conheça nossos experts</h1>
-        <div class="time">
-          <div class="box-time">
-            <div class="img-ex"></div>
-            <!-- <img src="" alt="" height="200px"> -->
-            <h4>Amanda Cupola</h4>
+    <section id="#sessao-6" class="sessao-6">
+      <div class="container-slider">
+        <button id="prev-button"><img src="assets/imgs/arrow.png" alt="prev-button"></button>
+        <div class="container-images time">
+          <div class="slider on">
+            <div class="box-time">
+            <div class="img-ex">
+              <img src="assets/img/fotoAmanda.JPG" alt=""> 
+            </div>
+             <h4>Amanda Cupola</h4>
             <p>Programadora</p>
           </div>
           <div class="box-time">
-            <div class="img-ex"></div>
-            <!-- <img src="" alt=""> -->
-            <h4>Amanda Cupola</h4>
+            <div class="img-ex">
+              <img src="assets/img/fotoGustavo2.jpg" alt="">
+            </div>
+             <h4>Gustavo Enrico</h4>
+            <p>Programador</p>
+          </div>
+          <div class="box-time">
+            <div class="img-ex">
+              <img src="assets/img/fotoArthur.jpg" alt="">
+            </div> 
+             <h4>Arthur Henrique</h4>
+            <p>Programador</p>
+          </div>
+          </div>
+          <div class="slider">
+            <div class="box-time">
+            <div class="img-ex">
+              <img src="assets/img/fotoNicolas.JPG" alt=""> 
+            </div>
+             <h4>Nicolas Zanardi</h4>
             <p>Programadora</p>
           </div>
           <div class="box-time">
-            <div class="img-ex"></div>
-            <!-- <img src="" alt=""> -->
-            <h4>Amanda Cupola</h4>
-            <p>Programadora</p>
+            <div class="img-ex">
+              <img src="assets/img/fotoDaniel.JPG" alt="">
+            </div>
+             <h4>Daniel Yuzo</h4>
+            <p>Programador</p>
           </div>
           <div class="box-time">
-            <div class="img-ex"></div>
-            <!-- <img src="" alt=""> -->
-            <h4>Amanda Cupola</h4>
-            <p>Programadora</p>
+            <div class="img-ex">
+              <img src="assets/img/fotoAmanda.JPG" alt="">
+            </div> 
+             <h4>Amanda Cupola</h4>
+            <p>Programador</p>
           </div>
-          <!-- <div class=box-time>
-          <img src="" alt="">
-          <h4>Amanda Cupola</h4>
-          <p></p>
-        </div> -->
-        </div>
+          </div>
+          </div>
+        <button id="next-button"><img src="assets/imgs/arrow.png" alt="next-button"></button>
       </div>
     </section>
 
-    <section class="sessao-7">
+    <section id="#sessao-7" class="sessao-7">
       <div class="container-contact">
         <div class="box-contact">
           <form action="https://api.staticforms.xyz/submit" method="post">
@@ -387,7 +392,7 @@
             <button type="submit">Enviar</button>
 
             <input type="hidden" name="accessKey" value="4a6ecf90-1d41-487c-9555-ad8e1ce487b9">
-            <input type="hidden" name="redirectTo" value="http://127.0.0.1:5501/site/public/obrigado.html">
+            <input type="hidden" name="redirectTo" value="http://localhost:3333/obrigado.html">
         </form>
         </div>
         <div class="container-contact-2">
@@ -443,15 +448,54 @@
           <img src="assets/imgs/ogo-name-dark-1.png" alt="" width="150px" />
           <div>
             <p>
-              hello@example.com<br />
-              +79 2589 63598
+              support@viss.atlassian.net<br />
+              +11 92589 63598
             </p>
           </div>
         </div>
-        <button>Termos e condições</button>
+        <!-- <button>Termos e condições</button>
         <button>Privacidade</button>
-        <button>Trabalhe conosco</button>
+        <button>Trabalhe conosco</button> -->
       </div>
     </footer>
   </body>
 </html>
+
+<script>
+  const slider = document.querySelectorAll('.slider');
+const btnPrev = document.getElementById('prev-button');
+const btnNext = document.getElementById('next-button');
+
+let currentSlide = 0;
+
+function hideSlider() {
+  slider.forEach(item => item.classList.remove('on'))
+}
+
+function showSlider() {
+  slider[currentSlide].classList.add('on')
+}
+
+function nextSlider() {
+  hideSlider()
+  if(currentSlide === slider.length -1) {
+    currentSlide = 0
+  } else {
+    currentSlide++
+  }
+  showSlider()
+}
+
+function prevSlider() {
+  hideSlider()
+  if(currentSlide === 0) {
+    currentSlide = slider.length -1
+  } else {
+    currentSlide--
+  }
+  showSlider()
+}
+
+btnNext.addEventListener('click', nextSlider)
+btnPrev.addEventListener('click', prevSlider)
+</script>

@@ -258,7 +258,7 @@ label {
   position: relative;
   display: block;
   height: 22px;
-  width: 30px;
+  width: auto;
 }
 
 label span {
@@ -349,3 +349,13 @@ label span:nth-child(3) {
   font-size: 23px;
 }
 
+.login h1{
+  font-size: 23px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.login a{
+  text-decoration: none;
+  color: white;
+}

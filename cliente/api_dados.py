@@ -10,9 +10,11 @@ import mysql.connector
 import mysql.connector.errorcode
 # Pacote matplotlib para exibir o gráfico
 import matplotlib.pyplot as plt
+# pacotes para enviar os dados para o slack
 import requests
 import json
 
+# Webhook ligando ao canal #chat_jira do Slack
 webbook = "https://hooks.slack.com/services/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"
 
 # Esta variável é só para facilitar a edição de cores, que são usadas como métricas
@@ -46,6 +48,12 @@ while not opcao in ("1", "2", "3"):
 
 # Opção de exibir histórico
 if opcao == "2":
+
+    fig = plt.figure()
+    gs = fig.add_gridspec(1,3, hspace=0.5)
+    fig.set_figheight(150)
+    fig.set_figwidth(400)
+    axs = gs.subplots(sharex=True, sharey=True)
     # recuperamos todas as colunas dos últimos 40 registros (~20 min)
     # Uma possível melhoria seria deixar o usuário escolher o período que quer observar
     comando.execute("SELECT * FROM registro ORDER BY dataRegistro DESC LIMIT 40")
@@ -53,6 +61,8 @@ if opcao == "2":
     yCpu = []
     yRam = []
     yDisco = []
+    yAlerta = []
+    yCritico = []
 
     # aqui são montados os arrays, para exibir através do matplotlib
     for (id, cpu, ram, disco, dataRegistro) in comando:
@@ -60,14 +70,21 @@ if opcao == "2":
         yCpu.append(cpu)
         yRam.append(ram)
         yDisco.append(disco)
+        yAlerta.append(70)
+        yCritico.append(90)
 
     # Todos usam o mesmo array x, pois todos se referem às mesmas datas e horas.
-    plt.plot(x, yCpu, label='Uso de CPU (%)')
-    plt.plot(x, yRam, label='Uso de RAM (%)')
-    plt.plot(x, yDisco, label='Uso de disco (%)')
+    axs[0].plot(x, yCpu, 'g')
+    axs[0].set_title('Uso de CPU (%)')
+    axs[1].plot(x, yRam, 'b')
+    axs[1].set_title('Uso de RAM (%)')
+    axs[2].plot(x, yDisco, 'r')
+    axs[2].set_title('Uso de disco (%)')
+    plt.yticks([0,10,20,30,40,50,60,70,80,90,100])
+    
 
     # plt.legend() é obrigatório para exibir a legenda, indicando qual linha é qual
-    plt.legend()
+    # plt.legend()
     
     plt.show()
 
@@ -204,10 +221,10 @@ elif opcao == "1":
         # no caso da RAM e disco dividimos por 1000000000 para converter de byte para GB.
         # também é usado round para exibir só 2 casas decimais, para ficar mais amigável para o usuário
         print('CPU: ' + str(cpu_use) + ' %\n' + cpu_bar)
-        print('\nRAM: ' + str(round(ram_use.used / 1000000000, 2)) + '/' + str(round(ram_use.total / 1000000000,2)) +' GB\n' + ram_bar)
+        print('\nRAM: ' + str(round(ram_use.used / pow(10, 9), 2)) + '/' + str(round(ram_use.total / pow(10, 9),2)) +' GB\n' + ram_bar)
         
         for (k,disk) in enumerate(disk_use_list):         
-            print('\n' + partitions[k].device + ': ' +str(round(disk.used / 1000000000, 2))+ '/' +str(round(disk.total / 1000000000, 2))  + ' GB\n' + disk_bar[k])
+            print('\n' + partitions[k].device + ': ' +str(round(disk.used / pow(10, 9), 2))+ '/' +str(round(disk.total / pow(10, 9), 2))  + ' GB\n' + disk_bar[k])
 
         # Somamos nas variáveis que usaremos para gravar no banco depois
         cpu_soma += cpu_use
@@ -241,7 +258,7 @@ elif opcao == "1":
             # em arrays. Basicamente eles siginificam que você conta de trás para frente, então o índice
             # -1 te da o último item do array, o -2 dá o penúltimo, e assim por diante.
 
-
+            # Envio de mensagem ao slack 
             if (ram_historico[-1] <= 90):
                 mensagem = { "text": "A RAM está em estado crítico" }
                 requests.post(webbook, data=json.dumps(mensagem))
